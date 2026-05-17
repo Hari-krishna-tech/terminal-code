@@ -12,8 +12,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter;
-import terminal_code.backend.auth.api.JwtAuthenticationFilter;
-import terminal_code.backend.auth.application.OAuth2SuccessHandler;
+import terminal_code.backend.security.JwtAuthenticationFilter;
+import terminal_code.backend.security.OAuth2SuccessHandler;
 
 import java.util.List;
 
