@@ -1,0 +1,53 @@
+{
+  "productName": "Terminal Code",
+  "version": "0.1.0",
+  "identifier": "com.terminal-code.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Terminal Code",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true,
+        "decorations": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' http://localhost:8080 https://api.terminal-code.io https://accounts.google.com; img-src 'self' data: https://*.googleusercontent.com; font-src 'self' data:"
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true,
+      "scope": [
+        {
+          "name": "system-terminal",
+          "cmd": "",
+          "args": true
+        }
+      ]
+    },
+    "fs": {
+      "scope": {
+        "allow": ["$HOME/**", "/**"],
+        "deny": []
+      }
+    },
+    "store": {
+      "scope": ["**"]
+    },
+    "deep-link": {
+      "desktop": {
+        "schemes": ["terminal-code"]
+      }
+    }
+  }
+}

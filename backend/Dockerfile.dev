@@ -1,0 +1,9 @@
+FROM eclipse-temurin:19-jdk
+WORKDIR /app
+COPY gradlew gradlew.bat ./
+COPY gradle/ gradle/
+COPY build.gradle settings.gradle ./
+RUN ./gradlew dependencies --no-daemon
+COPY src/ src/
+EXPOSE 8080
+CMD ["./gradlew", "bootRun", "--no-daemon", "--args=--spring.profiles.active=dev"]

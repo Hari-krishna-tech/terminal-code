@@ -1,0 +1,12 @@
+package terminal_code.backend.workspace.domain;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+public interface WorkspaceRepository extends JpaRepository<Workspace, UUID> {
+    List<Workspace> findByUserIdOrderBySortOrderAsc(UUID userId);
+    List<Workspace> findByUserIdAndIsStarredTrue(UUID userId);
+    Optional<Workspace> findByIdAndUserId(UUID id, UUID userId);
+}
